@@ -3,19 +3,41 @@ import mountains from './images/mountains.svg';
 import pin from './images/pin.svg';
 import clock from './images/clock.svg';
 import pack from './images/pack.svg';
+import angels from './images/angels.png';
+import ReactDOM from "react-dom";
 
 
 
 class Card extends Component {
   // constructor(props) {
   //   super(props);
+  //   this.state = {selectedTrail:{}};
   // }
+  //
+  // selectedTrail = (trail) => {
+  //   // console.warn(trail);
+  //   this.setState({
+  //     selectedTrail: trail
+  //   });
+  // }
+  state = { show: false };
+
+  selectedTrail = () => {
+    this.setState({ show: true});
+  };
+
+  selectedTrail = (trail) => {
+    this.setState({ selectedTrail: trail, show: false });
+  };
 
   render() {
     return (
       <div className="Card">
+      <div>
+        <button className="close" onClick={this.selectedTrail}>X</button>
+      </div>
       <div className="landmark">
-        {this.props.trail.attributes.imgUrl}
+        <img src={angels}/>
       </div>
       {this.props.trail.name.length > 0 &&
 
@@ -34,6 +56,9 @@ class Card extends Component {
   }
 }
 
+const container = document.createElement("div");
+document.body.appendChild(container);
+// ReactDOM.render(<Dashboard />, container);
 export default Card;
 
 // <li><img src='./images/mountains.svg'/>{this.props.trail.attributes.difficulty}</li>
