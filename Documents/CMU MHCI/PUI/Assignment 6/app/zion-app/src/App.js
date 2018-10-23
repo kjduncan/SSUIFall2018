@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Card from './components/card.js';
+import Card from './card.js';
 import './App.css';
 import background from './images/zion.png';
+import angels from './images/angels.png';
 
 
 let trails = [
@@ -10,7 +11,9 @@ let trails = [
     attributes: {
       difficulty: '10',
       duration: '10:00',
-      distance: 4.8
+      distance: 4.8,
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgUrl: angels
     }
   },
   {
@@ -18,7 +21,8 @@ let trails = [
     attributes: {
       difficulty: 2,
       duration: '2:12',
-      distance: 2.2
+      distance: 2.2,
+      supplies: 'water, boots, backpack, sunscreen, hat'
     }
   },
   {
@@ -26,7 +30,8 @@ let trails = [
     attributes: {
       difficulty: 2,
       duration: '2:12',
-      distance: 2.2
+      distance: 2.2,
+      supplies: 'water, boots, backpack, sunscreen, hat'
     }
   },
   {
@@ -34,7 +39,8 @@ let trails = [
     attributes: {
       difficulty: 3,
       duration: '2:12',
-      distance: 2.2
+      distance: 2.2,
+      supplies: 'water, boots, backpack, sunscreen, hat'
     }
   },
   {
@@ -42,7 +48,8 @@ let trails = [
     attributes: {
       difficulty: 4,
       duration: '2:12',
-      distance: 2.2
+      distance: 2.2,
+      supplies: 'water, boots, backpack, sunscreen, hat'
     }
   },
   {
@@ -50,7 +57,8 @@ let trails = [
     attributes: {
       difficulty: 5,
       duration: '2:12',
-      distance: 2.2
+      distance: 2.2,
+      supplies: 'water, boots, backpack, sunscreen, hat'
     }
   }
 ];
@@ -71,6 +79,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
+      <div className="container">
         <nav>
           <ul>
             <button onClick={() => {this.selectedTrail(trails[0])}}><li>Angels Landing</li></button>
@@ -81,8 +90,9 @@ class App extends Component {
             <button onClick={() => {this.selectedTrail(trails[5])}}><li>Watchman Trail</li></button>
           </ul>
         </nav>
-        <div class="main" style={{backgroundImage: `url(${background})`}}>
+        <div className="main" style={{backgroundImage: `url(${background})`}}>
           <h1>Zion</h1>
+        </div>
         </div>
 
 

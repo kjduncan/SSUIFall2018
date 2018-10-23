@@ -24,16 +24,20 @@
   color: #61dafb;
 }
 .main {
-  height: 570px;
   background-size: cover;
-  margin-top: 250px;
-  overflow: hidden;
+
 }
 .main h1 {
   color: #ffffff;
   font-size: 300px;
   margin-bottom: 0;
   text-transform: uppercase;
+}
+.container {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 nav ul {
@@ -52,6 +56,38 @@ nav ul button {
 nav ul button:hover {
   color: #000000;
   cursor: pointer;
+}
+.Card {
+  max-height: 400px;
+  background-color: #D2D2D2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #591B01;
+  font-weight: bold;
+
+}
+.landmark {
+  height: 200px;
+}
+ul.hikeInfo {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: left;
+}
+ul.hikeInfo li {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+ul.hikeInfo li img {
+  max-height: 32px;
+  padding-right: 24px;
+}
+ul.hikeInfo li p {
+  width: 102px;
+  margin: 0;
 }
 @keyframes App-logo-spin {
   from {
