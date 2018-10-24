@@ -9,14 +9,39 @@ import pack from './images/pack.svg';
 
 class Card extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {cardShowing: false}
+  }
+
+  componentDidMount() {
+    window.requestAnimationFrame(() => {
+      this.setState({
+        cardShowing: true
+      });
+    });
+  }
+
+  closeCard = () => {
+    this.setState({
+      cardShowing: false
+    },
+    () => {
+      setTimeout(() => {
+        this.props.cardClose({});
+      }, 200);
+    }
+    );
+
+  }
 
   render() {
     return (
       <div className="mother">
 
-        <div className="Card">
+        <div className={`Card ${this.state.cardShowing ? 'show' : 'hidden'}`}>
           <div>
-            <button className="close" onClick={() => {this.props.cardClose({})}}>X</button>
+            <button className="close" onClick={() => {this.closeCard()}}>X</button>
           </div>
           <div className="landmark">
             <img src={this.props.trail.attributes.imgSrc}/>
@@ -32,7 +57,7 @@ class Card extends Component {
               </ul>
           </div>
         </div>
-        <div className="darkBackground"></div>
+        <div className="darkBackground" onClick={() => {this.closeCard()}}></div>
       </div>
     );
   }
