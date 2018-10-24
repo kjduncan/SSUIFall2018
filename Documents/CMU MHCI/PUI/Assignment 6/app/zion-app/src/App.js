@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import Card from './card.js';
 import './App.css';
 import background from './images/zion.png';
+
 import angels from './images/angels.png';
+import narrows from './images/narrows.png';
+import grotto from './images/grotto.png';
+import emerald from './images/emerald.png';
+import weep from './images/weep.png';
+import watchman from './images/watchman.png';
+
 
 
 let trails = [
@@ -13,7 +20,7 @@ let trails = [
       duration: '10:00',
       distance: 4.8,
       supplies: 'water, boots, backpack, sunscreen, hat',
-      imgUrl: angels
+      imgSrc: angels
     }
   },
   {
@@ -22,7 +29,8 @@ let trails = [
       difficulty: 2,
       duration: '2:12',
       distance: 2.2,
-      supplies: 'water, boots, backpack, sunscreen, hat'
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgSrc: narrows
     }
   },
   {
@@ -31,7 +39,8 @@ let trails = [
       difficulty: 2,
       duration: '2:12',
       distance: 2.2,
-      supplies: 'water, boots, backpack, sunscreen, hat'
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgSrc: grotto
     }
   },
   {
@@ -40,7 +49,8 @@ let trails = [
       difficulty: 3,
       duration: '2:12',
       distance: 2.2,
-      supplies: 'water, boots, backpack, sunscreen, hat'
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgSrc: emerald
     }
   },
   {
@@ -49,7 +59,8 @@ let trails = [
       difficulty: 4,
       duration: '2:12',
       distance: 2.2,
-      supplies: 'water, boots, backpack, sunscreen, hat'
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgSrc: weep
     }
   },
   {
@@ -58,7 +69,8 @@ let trails = [
       difficulty: 5,
       duration: '2:12',
       distance: 2.2,
-      supplies: 'water, boots, backpack, sunscreen, hat'
+      supplies: 'water, boots, backpack, sunscreen, hat',
+      imgSrc: watchman
     }
   }
 ];
@@ -100,7 +112,7 @@ class App extends Component {
 
 
         {this.state.selectedTrail.name &&
-            <Card trail={this.state.selectedTrail} />
+            <Card trail={this.state.selectedTrail} cardClose={this.selectedTrail} />
         }
 
       </div>
