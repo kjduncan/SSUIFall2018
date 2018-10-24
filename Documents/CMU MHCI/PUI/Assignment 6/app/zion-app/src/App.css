@@ -64,7 +64,6 @@ nav ul button:hover {
   cursor: pointer;
 }
 .Card {
-  max-height: 400px;
   background-color: #D2D2D2;
   display: flex;
   flex-direction: row;
@@ -122,9 +121,11 @@ ul.hikeInfo li p {
   margin: 0;
 }
 .landmark img {
-  max-height: 100%;
+  height: 100%;
   bottom: 0;
   max-width: 100%;
+  object-fit: cover;
+
 }
 .mother {
   display: flex;
